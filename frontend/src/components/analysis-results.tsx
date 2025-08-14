@@ -11,9 +11,9 @@ interface AnalysisResultsProps {
 
 export default function AnalysisResults({ result }: AnalysisResultsProps) {
   const getScoreColor = (score: number) => {
-    if (score >= 80) return "bg-green-500";
-    if (score >= 60) return "bg-yellow-500";
-    return "bg-red-500";
+    if (score >= 80) return "bg-green-500 dark:bg-green-600";
+    if (score >= 60) return "bg-yellow-500 dark:bg-yellow-600";
+    return "bg-red-500 dark:bg-red-600";
   };
 
   const getScoreText = (score: number) => {
@@ -36,7 +36,7 @@ export default function AnalysisResults({ result }: AnalysisResultsProps) {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="w-full bg-gray-200 rounded-full h-3">
+          <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
             <div 
               className={`h-3 rounded-full transition-all duration-300 ${getScoreColor(result.score)}`}
               style={{ width: `${result.score}%` }}
@@ -60,7 +60,7 @@ export default function AnalysisResults({ result }: AnalysisResultsProps) {
             {result.matching_skills.length > 0 ? (
               <div className="flex flex-wrap gap-2">
                 {result.matching_skills.map((skill, index) => (
-                  <Badge key={index} variant="secondary" className="bg-green-100 text-green-800">
+                  <Badge key={index} variant="secondary" className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">
                     {skill}
                   </Badge>
                 ))}
@@ -83,7 +83,7 @@ export default function AnalysisResults({ result }: AnalysisResultsProps) {
             {result.missing_skills.length > 0 ? (
               <div className="flex flex-wrap gap-2">
                 {result.missing_skills.map((skill, index) => (
-                  <Badge key={index} variant="secondary" className="bg-red-100 text-red-800">
+                  <Badge key={index} variant="secondary" className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200">
                     {skill}
                   </Badge>
                 ))}
@@ -108,7 +108,7 @@ export default function AnalysisResults({ result }: AnalysisResultsProps) {
             <ul className="space-y-2">
               {result.missing_qualifications.map((qualification, index) => (
                 <li key={index} className="flex items-start gap-2">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-orange-500 dark:bg-orange-400 rounded-full mt-2 flex-shrink-0"></div>
                   <span className="text-sm">{qualification}</span>
                 </li>
               ))}
@@ -130,7 +130,7 @@ export default function AnalysisResults({ result }: AnalysisResultsProps) {
             <ul className="space-y-3">
               {result.suggestions.map((suggestion, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-semibold flex-shrink-0 mt-0.5">
+                  <div className="w-6 h-6 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full flex items-center justify-center text-xs font-semibold flex-shrink-0 mt-0.5">
                     {index + 1}
                   </div>
                   <span className="text-sm">{suggestion}</span>
