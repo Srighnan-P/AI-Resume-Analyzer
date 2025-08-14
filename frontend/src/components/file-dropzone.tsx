@@ -47,7 +47,7 @@ export default function FileDropzone({
               Click to upload your resume
             </p>
             <p className="text-xs text-muted-foreground">
-              PDF, DOCX, or DOC files only (max 10MB)
+              PDF, DOCX, or DOC files only (max 10 MB)
             </p>
           </div>
         </label>

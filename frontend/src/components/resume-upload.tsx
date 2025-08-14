@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -10,6 +10,7 @@ import FileDropzone from "./file-dropzone";
 import AnalysisResults from "./analysis-results";
 import { analyzeResume, validateFile } from "@/lib/api";
 import { AnalysisResponse } from "@/types/api";
+import { formatFileSize } from "@/lib/utils";
 
 export default function ResumeUpload() {
   const [file, setFile] = useState<File | null>(null);
@@ -17,6 +18,7 @@ export default function ResumeUpload() {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [analysisResult, setAnalysisResult] = useState<AnalysisResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
 
   const handleFileSelect = (selectedFile: File) => {
     try {
@@ -46,6 +48,16 @@ export default function ResumeUpload() {
       // Check if the response contains an error
       if (result.error) {
         setError(result.error);
+      } else {
+        // Scroll to results section after successful analysis
+        setTimeout(() => {
+          resultsRef.current?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          // Add additional offset to account for header
+          window.scrollBy(0, -80);
+        }, 100);
       }
     } catch (analysisError) {
       console.error('Analysis error:', analysisError);
@@ -108,7 +120,7 @@ export default function ResumeUpload() {
                 <FileText className="h-4 w-4" />
                 <span className="text-sm">{file.name}</span>
                 <span className="text-xs text-muted-foreground">
-                  ({(file.size / 1024 / 1024).toFixed(2)} MB)
+                  ({formatFileSize(file.size)})
                 </span>
               </div>
             )}
@@ -152,7 +164,7 @@ export default function ResumeUpload() {
           {isAnalyzing ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Analyzing...
+              Analyzing Resume...
             </>
           ) : (
             <>
@@ -174,10 +186,38 @@ export default function ResumeUpload() {
         )}
       </div>
 
+      {/* Analysis Loading State */}
+      {isAnalyzing && (
+        <Card className="mt-8">
+          <CardContent className="pt-6">
+            <div className="flex flex-col items-center justify-center py-8 space-y-4">
+              <Loader2 className="h-8 w-8 animate-spin text-primary" />
+              <div className="text-center space-y-2">
+                <h3 className="text-lg font-semibold">Analyzing Your Resume</h3>
+                <p className="text-muted-foreground">
+                  Our AI is comparing your resume against the job description...
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  This may take a few moments
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
       {/* Analysis Results */}
       {analysisResult && !error && (
-        <div className="mt-8">
-          <h2 className="text-2xl font-bold mb-6 text-center">Analysis Results</h2>
+        <div 
+          ref={resultsRef} 
+          className="mt-12 pt-8 border-t border-border animate-in fade-in slide-in-from-bottom-4 duration-500"
+        >
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-primary mb-2">Analysis Results</h2>
+            <p className="text-muted-foreground">
+              Here&apos;s what our AI found when comparing your resume to the job description
+            </p>
+          </div>
           <AnalysisResults result={analysisResult} />
         </div>
       )}

@@ -1,4 +1,5 @@
 import { AnalysisResponse } from '@/types/api';
+import { formatFileSize } from '@/lib/utils';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
@@ -28,9 +29,11 @@ export const validateFile = (file: File): void => {
     throw new Error('Please upload a PDF, DOCX, or DOC file');
   }
   
-  // Optional: Add file size validation (max 10MB)
+  // Add file size validation (max 10MB)
   const maxSize = 10 * 1024 * 1024; // 10MB in bytes
   if (file.size > maxSize) {
-    throw new Error('File size must be less than 10MB');
+    const currentSize = formatFileSize(file.size);
+    const maxSizeFormatted = formatFileSize(maxSize);
+    throw new Error(`File size (${currentSize}) exceeds the maximum allowed size of ${maxSizeFormatted}`);
   }
 };
