@@ -1,14 +1,21 @@
 import { AnalysisResponse } from '@/types/api';
 import { formatFileSize } from '@/lib/utils';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+const API_BASE_URL = process.env.NODE_ENV === 'production' 
+  ? '' // Use relative paths in production (Vercel)
+  : process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
 export const analyzeResume = async (resumeFile: File, jobDescription: string): Promise<AnalysisResponse> => {
   const formData = new FormData();
   formData.append('resume', resumeFile);
   formData.append('job_desc', jobDescription);
 
-  const response = await fetch(`${API_BASE_URL}/api/analyze`, {
+  // Use correct endpoint based on environment
+  const endpoint = process.env.NODE_ENV === 'production' 
+    ? '/api/analyze'  // For Vercel deployment
+    : '/analyze';     // For local development
+
+  const response = await fetch(`${API_BASE_URL}${endpoint}`, {
     method: 'POST',
     body: formData,
   });
