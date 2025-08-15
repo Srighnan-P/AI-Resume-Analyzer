@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/analyze.py",
+      "use": "@vercel/python"
+    }
+  ]
+}
