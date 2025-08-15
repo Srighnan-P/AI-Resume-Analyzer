@@ -10,7 +10,10 @@
     },
     {
       "src": "api/analyze.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "runtime": "python3.9"
+      }
     }
   ],
   "routes": [
@@ -27,11 +30,6 @@
       "dest": "/$1"
     }
   ],
-  "functions": {
-    "api/analyze.py": {
-      "runtime": "python3.9"
-    }
-  },
   "env": {
     "GEMINI_API_KEY": "@gemini-api-key"
   }
