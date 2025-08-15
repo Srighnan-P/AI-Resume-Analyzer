@@ -240,5 +240,5 @@ async def api_analyze_endpoint(resume: UploadFile = File(...), job_desc: str = F
 async def root():
     return {"message": "AI Resume Analyzer API"}
 
-# For Vercel deployment
-handler = app
+# Export app for Vercel
+app = app
