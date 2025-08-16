@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "api/analyze.py": {
-      "runtime": "python3.9"
-    }
-  }
-}
