@@ -5,49 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38fb5782-4c86-41bf-86be-ea1caf1b8305" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/eslint.config.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/next.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/postcss.config.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/file.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/globe.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/vercel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/window.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/globals.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/analysis-results.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/file-dropzone.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/footer.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/header.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/loading-spinner.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/resume-upload.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/theme-provider.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/theme-toggle-dropdown.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/theme-toggle.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/badge.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/button.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/card.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/dropdown-menu.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/form.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/input.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/label.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/select.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ui/textarea.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/lib/api.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/lib/utils.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/types/api.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

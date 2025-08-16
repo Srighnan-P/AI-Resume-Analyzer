@@ -15,13 +15,21 @@ export const analyzeResume = async (resumeFile: File, jobDescription: string): P
     ? '/api/analyze'  // For Vercel deployment
     : '/analyze';     // For local development
 
-  const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+  const fullUrl = `${API_BASE_URL}${endpoint}`;
+  console.log('Making request to:', fullUrl);
+  console.log('Environment:', process.env.NODE_ENV);
+
+  const response = await fetch(fullUrl, {
     method: 'POST',
     body: formData,
   });
 
+  console.log('Response status:', response.status);
+  console.log('Response headers:', Object.fromEntries(response.headers.entries()));
+
   if (!response.ok) {
     const errorData = await response.json().catch(() => ({ detail: 'Unknown error occurred' }));
+    console.log('Error data:', errorData);
     throw new Error(errorData.detail || `HTTP ${response.status}: ${response.statusText}`);
   }
 

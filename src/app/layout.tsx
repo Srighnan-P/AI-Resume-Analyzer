@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "AI Resume Analyzer",
   description: "Upload and analyze your resume with AI-powered insights",
+  icons: {
+    icon: '/AI-Resume.svg',
+  },
 };
 
 export default function RootLayout({
@@ -27,6 +30,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="shortcut icon" href="/icon.svg" />
+        <link rel="apple-touch-icon" href="/icon.svg" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
