@@ -19,12 +19,16 @@ export default function Header() {
         </div>
         
         <nav className="flex items-center space-x-4">
-          <Button variant="ghost" size="sm">
-            About
-          </Button>
-          <Button variant="ghost" size="sm">
-            <Github className="h-4 w-4 mr-2" />
-            GitHub
+          <Button variant="ghost" size="sm" asChild>
+            <a 
+              href="https://github.com/Srighnan-P/AI-Resume-Analyzer" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center"
+            >
+              <Github className="h-4 w-4 mr-2" />
+              GitHub
+            </a>
           </Button>
           <ThemeToggleDropdown />
         </nav>
